@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Usuarios</title>
+</head>
+<body>
+<h1>Usuarios</h1>
+<span>
+	<a th:href="@{/usuarios/formAdd}">
+		Nuevo Usuario
+	</a>
+</span>
+
+<table>
+<thead>
+	<tr>
+		<th>id</th>
+		<th>Nombre</th>
+		<th>Usuario</th>
+		<th>Password</th>
+	</tr>
+</thead>
+<tbody>
+	<tr th:each="usuario : ${usuarios}">
+		<td><span th:text="${usuario.id}">Name</span></td>
+		<td><span th:text="${usuario.nombre}">Nombre</span></td>
+		<td><span th:text="${usuario.user}">Usuario</span></td>
+		<td><span th:text="${usuario.pass}">Pass</span></td>
+		<td>
+			<span>
+				<a th:href="@{/usuarios/delete/{id}(id=${usuario.id})}">
+					Borrar
+				</a>
+			</span>
+		</td>
+		<td>
+			<span>
+				<a th:href="@{/usuarios/formEdit/{id}(id=${usuario.id})}">
+					Editar
+				</a>
+			</span>
+		</td>		
+	</tr>
+</tbody>
+
+
+</table>
+</body>
+</html>

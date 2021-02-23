@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Productos</title>
+</head>
+<body>
+<h1>Productos</h1>
+<h1>Edicion</h1>
+<form action="#" th:action="@{/productos/editAction}" th:object="${producto}" method="post">
+	<input type="hidden" th:field="*{id}"/>
+	<p>Nombre: <input type="text" th:field="*{nombre}" /></p>
+	<p>
+		Categoria: 
+		<select th:field="*{idCategoria}">
+		    <option th:each="categoria : ${categorias}"
+		        th:value="${categoria.id}"
+		        th:text="${categoria.nombre}">
+		            Categoria
+		    </option>
+		</select>
+	</p>
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>

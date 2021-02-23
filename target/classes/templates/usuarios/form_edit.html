@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Productos</title>
+</head>
+<body>
+<h1>Usuarios</h1>
+<h1>Edicion</h1>
+<form action="#" th:action="@{/usuarios/editAction}" th:object="${usuario}" method="post">
+	<input type="hidden" th:field="*{id}"/>
+	<p>Nombre: <input type="text" th:field="*{nombre}"/></p>
+	<p>Usuario: <input type="text" th:field="*{user}"/></p>
+	<p>Pass: <input type="text" th:field="*{pass}"/></p>
+
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>

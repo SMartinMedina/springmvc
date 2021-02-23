@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Productos</title>
+</head>
+<body>
+<h1>Productos</h1>
+<span>
+	<a th:href="@{/productos/formAdd}">
+		Nuevo Producto
+	</a>
+</span>
+<table>
+<thead>
+	<tr>
+		<th>id</th>
+		<th>Categoria</th>
+		<th>Nombre</th>
+	</tr>
+</thead>
+<tbody>
+	<tr th:each="producto : ${productos}">
+		<td><span th:text="${producto.id}">Name</span></td>
+		<td><span th:text="${producto.categoria.nombre}">Name</span></td>
+		<td><span th:text="${producto.nombre}">Name</span></td>
+		<td>
+			<span>
+				<a th:href="@{/productos/delete/{id}(id=${producto.id})}">
+					Borrar
+				</a>
+			</span>
+		</td>
+		<td>
+			<span>
+				<a th:href="@{/productos/formEdit/{id}(id=${producto.id})}">
+					Editar
+				</a>
+			</span>
+		</td>		
+	</tr>
+</tbody>
+
+
+</table>
+</body>
+</html>
